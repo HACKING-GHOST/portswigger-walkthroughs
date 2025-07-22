@@ -2,11 +2,37 @@
 
 
    # Lab 1 :- File path traversal, simple case
-
+     
       1.  We have to view the contents in the /etc/passwd file
       2.  Right click on any image.
       3.  Change the current image link ("https://YOUR_PROVIDED_IMAGE_ID.web-security-academy.net/image?filename=73.jpg") with this "https://YOUR_LAB_ID.web-security-academy.net/image?filename=../../../etc/passwd"
       4.  ../../../etc/passwd this is the addition we made in the URL to perform path traversal 
       5.  The sequence ../ is valid within a file path, and means to step up one level in the directory structure. The three consecutive ../ sequences step up from /var/www/images/ to the filesystem root, and so the file that is actually read is: /etc/passwd
       6.  On Windows, both ../ and ..\ are valid directory traversal sequences
+     
+   # Lab 2 :- File path traversal, traversal sequences blocked with absolute path bypass
+     
+      1.  Absoulte Path = We might be able to use an absolute path from the filesystem root, such as filename=/etc/passwd , to directly reference a file without using any traversal sequences.
+      2.  Right click on any image.
+      3.  Paste /etc/passwd in front of filename 
+     
+   # Lab 3 :- File path traversal, traversal sequences stripped non-recursively
 
+      1.  Non-recursively stripping means removing directory traversal sequences or specified characters from a string or file path in a single pass, without using recursive function calls. This contrasts with recursively stripping, which would involve repeatedly removing these sequences until none are left.
+      2.  This time we would add up sequence double because of stripping, ....//....//....//etc/passwd and this is to be injected in the URL
+
+   # Lab 4 :- File path traversal, traversal sequences stripped with superfluous URL-decode
+
+      1. In this the URL would be first decoded and then would be stripped of and if written normal it would be obviously stripped off
+      2. ../../../etc/passwd would be decoded two times to get ..%252f..%252f..%252fetc/passwd
+
+   # Lab 5 :- File path traversal, validation of start of path
+
+      1. In this we have to go back into home first then go in /etc/passwd 
+      2. Paste this in URL ../../../etc/passwd from here /var/www/images/
+
+   # Lab 6 :- File path traversal, validation of file extension with null byte bypass
+
+      1. In this we have to use null byte to bypass ../../../etc/passwd this is the same traversal technique
+      2. But this time we have to use null byte also so the parameter would add up ../../../etc/passwd%00.png It terminates the previous request written befoe null byte and only enables the .png to check through the URL 
+      3. Where in the backend the parameter works as they were working in previous labs 

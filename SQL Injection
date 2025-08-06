@@ -17,7 +17,7 @@
        
       LAB - 2 : SQL injection vulnerability allowing login bypass
 
-      # Task 2
+      # Task 1 
 
          1.  In this lab we have to bypass login page with existing SQLi vulnerability in login page 
              So we move out to login page at first where we we got username and password input fields 
@@ -26,6 +26,18 @@
          2.  So we put administrator'-- in username as username is given to us and
              In password field we can put . and then click on log in and the login has bypassed 
 
-      LAb - 3 : 
+      LAb - 3 : SQL injection attack, querying the database type and version on Oracle
+
+      # Task 1 
+
+         1.  We have to query out the database type and version of Oracle in this lab using SQL Injection 
+             As we know it is a Oracle database we will use banner and v$version in SQLi query to get the information 
+             First we will determine how many columns are being returned on running the query , for that 
+             https://YOUR-LAB-ID.web-security-academy.net/filter?category=%27UNION%20SELECT%20%27abc%27%20,%20%27null%27%20FROM%20dual--
+
+         2.  The database is quering out 2 columns so we will make a injection according to it which is
+             https://YOUR-LAB-ID.web-security-academy.net/filter?category='UNION SELECT BANNER, NULL FROM v$version-- 
+             This will give us the database version and the lab will be solved 
+
              
-              
+             

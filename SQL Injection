@@ -43,5 +43,11 @@
           
       #  Task 1
            
-         1.   
+         1.   In this lab we have to make the database query out DB type and version on MySQL and Microsoft 
+              First we will check how much columns there are being returned, to check we can use ' order by 1-- which return 200 response means there is one column
+              Then we use ' order by 2-- which also returns 200 , then on ' order by 3-- it shows error which means there are 2 columns
+
+         2.   Now we will use a SQLi with union and also use the SQLi cheatsheet to get the database type which is ,
+              ' UNION SELECT @@version, NULL-- - 
+              
              

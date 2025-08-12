@@ -60,4 +60,20 @@
           3.  After we got the table with user credentials we will find the column with credential in the table for which we will use ' UNION SELECT column_name, NULL FROM information_schema.columns where table_name = 'users_itdependsonyourlab'--
               After that we have got the columns with username(username_itdependsonyourlab) , password(password_itdependsonyourlab) Now we will query out the administrator's password with using 
               ' UNION SELECT username_itdependsonyourlab, password_itdependsonyourlab FROM users_itdependsonyourlab-- from here we will get the password for the administrator and the moment we do the login of the administrator we're done
+
+
+        LAB - 6 : SQL injection attack, listing the database contents on Oracle 
+
+
+          1.  In this lab we have to determine the table which contains usernames and passwords and the relevant columns 
+              Output the content of the table and login in as administrator 
+              First we will check the number of columns we have with ' order by 1-- ,which does not give any error we get error in ' order by 3-- means we have 2 columns 
+
+          2.  Now we will find the version of the Database with ' union select @@version, NULL-- which give error means it is not the DB so to check another DB we wil go with another Injection which is ' union select banner, NULL FROM v$version--
+              Which show's the version of the DB , Now to get the table names in this database we will use ' union select table_name, NULL from all_tables-- ,we have found table_name from google by searching about all_tables Oracle DB 
+              It shows us all the tables present in the DB from where we have to find out the one with users credentials information which we can find manually by searching table with users name 
+
+          3.  After we got the table with user credentials we will find the column with credential in the table for which we will use ' UNION SELECT column_name, NULL FROM information_schema.columns where table_name = 'users_itdependsonyourlab'--
+              After that we have got the columns with username(username_itdependsonyourlab) , password(password_itdependsonyourlab) Now we will query out the administrator's password with using 
+              ' UNION SELECT username_itdependsonyourlab, password_itdependsonyourlab FROM users_itdependsonyourlab-- from here we will get the password for the administrator and the moment we do the login of the administrator we're done
               

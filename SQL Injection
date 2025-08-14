@@ -77,8 +77,22 @@
               After that we have got the columns with username(username_itdependsonyourlab) , password(password_itdependsonyourlab) Now we will query out the administrator's password with using 
               ' UNION SELECT username_itdependsonyourlab, password_itdependsonyourlab FROM users_itdependsonyourlab-- from here we will get the password for the administrator and the moment we do the login of the administrator we're done
 
+
         LAB - 7 : SQL injection UNION attack, determining the number of columns returned by the query
 
 
-          1.  In this lab we have to determine the number of columns returned by the query. For checking that we will use ' union select null, null, null--
+          1.  In this lab we have to determine the number of columns returned by the query. For checking that we will use ' order by 1-- , ' order by 2-- , ' order by 3-- At ' order by 4-- it gives us internal server error which means there are 3 columns
+              As we know now there are 3 columns so we will use ' Union select Null, Null, Null-- to return all columns in one time 
               
+
+        LAB - 8 : SQL injection UNION attack, finding a column containing text
+
+
+          1.  In this lab we have to make the database retrieve a string provided by us on finding the column which contain text. First we have to check how many columns DB contains 
+              For checking that we will use ' order by 1-- , ' order by 2-- , ' order by 3-- At ' order by 4-- it gives us internal server error which means there are 3 columns
+              Now we will check which column contains text to check that we will use ' Union Select 'a', Null, Null-- , ' Union Select Null, 'a', Null-- , ' Union Select Null, Null, 'a'-- seperately to check which column contains text
+
+          2.  And ' Union Select Null, 'a', Null-- is the query that gives us back 'a' outputted on the website which means it contains text. Now to make the database retrieve the string provided by the site to us we will use ' union select NULL, 'string', NULL-- and we're done
+
+
+        LAB - 9 : 

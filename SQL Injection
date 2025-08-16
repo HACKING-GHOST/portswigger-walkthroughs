@@ -95,4 +95,12 @@
           2.  And ' Union Select Null, 'a', Null-- is the query that gives us back 'a' outputted on the website which means it contains text. Now to make the database retrieve the string provided by the site to us we will use ' union select NULL, 'string', NULL-- and we're done
 
 
-        LAB - 9 : 
+        LAB - 9 : SQL injection UNION attack, retrieving data from other tables
+
+
+          1.  In this lab we have to make the databse retrieve password of administrator which is stored in username, password column in users table. First we have to check how many columns does the lab return upon query and which DB does the lab contains 
+              To check the columns we would use ' order by 1-- upto ' order by 3-- where it gives internal server error which means there are 2 columns now we will check the DB for that we will use all the queries from which this ' union select version(), NULL-- query return PostgreSQL DB version
+              Now we will retrieve the password with the query ' union select username, password from users-- after that we will login into the account and we're done
+
+        LAB - 10 : 
+

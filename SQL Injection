@@ -93,7 +93,7 @@
 
 
           1.  In this lab we have to make the database retrieve a string provided by us on finding the column which contain text. First we have to check how many columns DB contains 
-              For checking that we will use ' order by 1-- , ' order by 2-- , ' order by 3-- At ' order by 4-- it gives us internal server error which means there are 3 columns
+              For checking that we will use ' order by 1-- , ' order by 2-- , ' order by 3--,  At  ' order by 4-- it gives us internal server error which means there are 3 columns
               Now we will check which column contains text to check that we will use ' Union Select 'a', Null, Null-- , ' Union Select Null, 'a', Null-- , ' Union Select Null, Null, 'a'-- seperately to check which column contains text
 
           2.  And ' Union Select Null, 'a', Null-- is the query that gives us back 'a' outputted on the website which means it contains text. Now to make the database retrieve the string provided by the site to us we will use ' union select NULL, 'string', NULL-- and we're done
@@ -107,5 +107,10 @@
               Now we will retrieve the password with the query ' union select username, password from users-- after that we will login into the account and we're done
 
 
-        LAB - 10 : 
+        LAB - 10 : SQL injection UNION attack, retrieving multiple values in a single column
+
+
+          1.  This lab contains different table called users, with columns called username and password we have to retrieve them and login . First we have to check how many columns DB contains 
+              For checking that we will use ' order by 1-- , ' order by 2-- , At ' order by 3-- it gives us internal server error which means there are 2 columns in which 2nd column is the one which returns text we check that with 
+              ' union select null, username from users-- from here we got 3 users where one of them is administrator then we tried ' union select null, passwords from users-- where we got 3 password so we tried all 3 passwords again & again with administrator as user and we login into the account and we're done
 

@@ -13,7 +13,8 @@
              We have to attack on it to make the application reveal one or more unreleased products 
       
          3.  This is the most basic type of SQL Injection based lab in this we can make the application reveal info with the most simple injection which is '+OR+1=1 in the URL
-       
+
+
       LAB - 2 : SQL injection vulnerability allowing login bypass
          
          
@@ -23,7 +24,8 @@
              
          2.  So we put administrator'-- in username as username is given to us and
              In password field we can put . and then click on log in and the login has bypassed 
-      
+
+
       LAB - 3 : SQL injection attack, querying the database type and version on Oracle
       
        
@@ -35,7 +37,8 @@
          2.  The database is quering out 2 columns so we will make a injection according to it which is
              https://YOUR-LAB-ID.web-security-academy.net/filter?category='UNION SELECT BANNER, NULL FROM v$version-- 
              This will give us the database version and the lab will be solved 
-          
+
+
       LAB - 4 : SQL injection attack, querying the database type and version on MySQL and Microsoft
           
            
@@ -45,6 +48,7 @@
 
          2.   Now we will use a SQLi with union and also use the SQLi cheatsheet to get the database type which is,
               ' UNION SELECT @@version, NULL-- - 
+
 
       LAB - 5 : SQL injection attack, listing the database contents on non-Oracle databases
 
@@ -101,6 +105,7 @@
           1.  In this lab we have to make the databse retrieve password of administrator which is stored in username, password column in users table. First we have to check how many columns does the lab return upon query and which DB does the lab contains 
               To check the columns we would use ' order by 1-- upto ' order by 3-- where it gives internal server error which means there are 2 columns now we will check the DB for that we will use all the queries from which this ' union select version(), NULL-- query return PostgreSQL DB version
               Now we will retrieve the password with the query ' union select username, password from users-- after that we will login into the account and we're done
+
 
         LAB - 10 : 
 

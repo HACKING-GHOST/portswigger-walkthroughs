@@ -114,3 +114,8 @@
               For checking that we will use ' order by 1-- , ' order by 2-- , At ' order by 3-- it gives us internal server error which means there are 2 columns in which 2nd column is the one which returns text we check that with 
               ' union select null, username from users-- from here we got 3 users where one of them is administrator then we tried ' union select null, passwords from users-- where we got 3 password so we tried all 3 passwords again & again with administrator as user and we login into the account and we're done
 
+
+        LAB - 11 : Blind SQL injection with conditional responses
+
+
+          1.  This lab contains a blind SQLi vuln in category filter so we have to intercept the request by 

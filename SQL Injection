@@ -118,5 +118,5 @@
         LAB - 11 : Blind SQL injection with conditional responses
 
 
-          1.  This lab contains a Blind SQLi vuln in category filter so we have to intercept the request by BurpSuite to get the administrator password with using intruder and brute-forcing it , we have to give all query on Tracking Id to work on Blind SQLi 
-          2.  
+          1.  This lab contains a Blind SQLi vuln in category filter so we have to intercept the request by BurpSuite to get the administrator password with using intruder and brute-forcing it , we have to give all query on Tracking Id to work on Blind SQLi after intercepting the request of Welcome back written on the page 
+          2.  First we will intercept the request 
